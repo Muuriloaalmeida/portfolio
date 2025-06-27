@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css">
+</head>
+
+<body>
+    <!-- Modais -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(1)">&times;</span>
+            <h2>Introdução ao Desenvolvimento Front-end</h2>
+            <p>O desenvolvimento front-end é responsável por criar a interface gráfica com a qual os usuários interagem
+                em
+                um site ou aplicação web. Envolve o uso de tecnologias como HTML, CSS e JavaScript para estruturar,
+                estilizar e dar interatividade às páginas. Um bom front-end proporciona uma experiência visual atrativa
+                e
+                funcional.</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(2)">&times;</span>
+            <h2>Tabelas</h2>
+            <p>As tabelas em HTML são utilizadas para organizar e exibir dados em formato tabular, com linhas e colunas.
+                A
+                estrutura básica envolve as tags &lt;table&gt;, &lt;tr&gt;, &lt;th&gt; e &lt;td&gt;. Apesar de hoje
+                serem
+                mais utilizadas para dados, no passado as tabelas também eram usadas para layout, prática atualmente
+                desencorajada.</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(3)">&times;</span>
+            <h2>Formulários</h2>
+            <p>Formulários são elementos fundamentais para a coleta de dados dos usuários. Utilizando tags como
+                &lt;form&gt;, &lt;input&gt;, &lt;select&gt; e &lt;textarea&gt;, os desenvolvedores criam interfaces que
+                permitem ações como login, cadastro, envio de mensagens e mais. A validação dos campos é essencial para
+                garantir a integridade das informações.</p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(4)">&times;</span>
+            <h2>Estilos de CSS</h2>
+            <p>O CSS (Cascading Style Sheets) é a linguagem de estilos usada para definir cores, fontes, espaçamentos,
+                alinhamentos e muito mais nos elementos HTML. Ele separa a estrutura (HTML) da apresentação visual,
+                permitindo criar interfaces bonitas, consistentes e responsivas com eficiência.</p>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(5)">&times;</span>
+            <h2>Media Query</h2>
+            <p>As media queries são recursos do CSS que permitem aplicar estilos diferentes dependendo do tamanho da
+                tela ou
+                dispositivo. São essenciais para o design responsivo, garantindo que o conteúdo se adapte bem a
+                celulares,
+                tablets e desktops. Exemplos comuns incluem mudanças em layout, tamanhos de fonte e exibição de
+                elementos.
+            </p>
+        </div>
+    </div>
+
+    <div
+        style="height: 100px; background-color: #122050; padding: 10px; margin: 0 auto; text-align: center; color: white; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+        <h1>Resumo de Atividades</h1>
+    </div>
+    <br><br>
+
+    <nav>
+        <ul>
+            <li onclick="openModal(1)">Aula 1</li>
+            <li onclick="openModal(2)">Aula 2</li>
+            <li onclick="openModal(3)">Aula 3</li>
+            <li onclick="openModal(4)">Aula 4</li>
+            <li onclick="openModal(5)">Aula 5</li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <h1>Resumo das Atividades</h1>
+        <p id="citacao">Esse projeto
+            <br>
+            tem como objetivo
+            <br>
+            mostrar o conteúdo das aulas
+        </p>
+        <p>
+            Este projeto reúne os principais tópicos abordados durante as aulas de introdução ao desenvolvimento
+            front-end. O conteúdo foi apresentado em sala com o objetivo de proporcionar uma compreensão inicial sobre a
+            construção de interfaces web modernas. As aulas exploram a criação de pás utilizando tabelas, formulários,
+            estilos com CSS e técnicas de responsividade com media queries. A navegação permite revisar cada tema de
+            forma organizada e objetiva.</p>
+    </main>
+
+    <footer>
+        <p>Alunos: Ronald Amaral, Gustavo Chikoski, Murilo Almeida</p>
+    </footer>
+
+
+    <script>
+        function openModal(n) {
+            document.getElementById('modal' + n).style.display = 'block';
+        }
+        function closeModal(n) {
+            document.getElementById('modal' + n).style.display = 'none';
+        }
+        // Fecha a modal se clicar fora dela
+        window.onclick = function (event) {
+            for (let i = 1; i <= 5; i++) {
+                const modal = document.getElementById('modal' + i);
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
